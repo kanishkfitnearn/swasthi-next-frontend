@@ -1,8 +1,18 @@
 "use client";
 import React, { useState, useEffect } from "react";
 
+type BlockType = 
+  | { type: "header"; data: { text: string; level: number } }
+  | { type: "paragraph"; data: { text: string } }
+  | { type: "list"; data: { style: string; items: string[] } };
+
+type ContentType = {
+  time: number;
+  blocks: BlockType[];
+};
+
 const PrivacyPolicy = () => {
-  const [content, setContent] = useState<any>({
+  const [content, setContent] = useState<ContentType>({
     time: new Date().getTime(),
     blocks: [
       {
@@ -13,7 +23,7 @@ const PrivacyPolicy = () => {
       {
         type: "paragraph",
         data: {
-          text: `At Swasthi, we are committed to ensuring that our users have control over their personal data...`,
+          text: "At Swasthi, we are committed to ensuring that our users have control over their personal data...",
         },
       },
       {
@@ -45,8 +55,10 @@ const PrivacyPolicy = () => {
         const response = await fetch(
           "https://admin-panel-backend-knoh.onrender.com/api/privacy"
         );
-        const data = await response.json();
-        if (response.ok) setContent(data.content);
+        if (!response.ok) throw new Error("Failed to fetch content");
+
+        const data: { content: ContentType } = await response.json();
+        setContent(data.content);
       } catch (error) {
         console.error("Error fetching content:", error);
       }
@@ -55,31 +67,39 @@ const PrivacyPolicy = () => {
   }, []);
 
   const renderText = (text: string | undefined) => {
-    if (typeof text !== "string") return null;
-    text = text
+    if (!text) return null;
+    const sanitizedText = text
       .replace(/&nbsp;/g, " ")
       .replace(/<b>/g, "<strong>")
       .replace(/<\/b>/g, "</strong>");
-    return <span dangerouslySetInnerHTML={{ __html: text }} />;
+    return <span dangerouslySetInnerHTML={{ __html: sanitizedText }} />;
   };
 
   return (
     <div className="min-h-screen flex bg-neutral-900 text-white pt-4 pb-4 ">
       <div className="max-w-7xl mx-auto bg-neutral-900  mt-11 p-11 rounded-lg shadow-lg border border-gray-700">
         <div className="bg-custom-gradient shadow-lg shadow-white p-4 rounded-lg border border-gray-600">
-          {content.blocks.map((block: any, index: number) => {
+          {content.blocks.map((block, index) => {
             switch (block.type) {
               case "header":
                 return (
                   <h2 key={index} className="text-lg font-bold text-white mb-2">
-                    {block.data?.text}
+                    {block.data.text}
                   </h2>
                 );
               case "paragraph":
                 return (
                   <p key={index} className="text-gray-300 mb-2">
-                    {renderText(block.data?.text)}
+                    {renderText(block.data.text)}
                   </p>
+                );
+              case "list":
+                return (
+                  <ol key={index} className="list-decimal pl-6 text-gray-300 mb-2">
+                    {block.data.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ol>
                 );
               default:
                 return null;

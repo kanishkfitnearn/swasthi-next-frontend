@@ -2,8 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 
+type BlockType = 
+  | { type: "header"; data: { text: string; level: number } }
+  | { type: "paragraph"; data: { text: string } }
+  | { type: "list"; data: { style: string; items: string[] } };
+
+type ContentType = {
+  time: number;
+  blocks: BlockType[];
+};
+
 const DataDeletionPolicy = () => {
-  const [content, setContent] = useState<any>({
+  const [content, setContent] = useState<ContentType>({
     time: new Date().getTime(),
     blocks: [
       {
@@ -40,8 +50,6 @@ const DataDeletionPolicy = () => {
     ],
   });
 
-  const [loading, setLoading] = useState(false);
-
   // Fetch existing content from backend
   useEffect(() => {
     const fetchContent = async () => {
@@ -50,8 +58,8 @@ const DataDeletionPolicy = () => {
           "https://admin-panel-backend-knoh.onrender.com/api/datadeletion"
         );
         if (!response.ok) throw new Error("Failed to fetch content");
-        const data = await response.json();
-        console.log("Fetched Content:", data);
+
+        const data: { content: ContentType } = await response.json();
         setContent(data.content);
       } catch (error) {
         console.error("Error fetching content:", error);
@@ -62,7 +70,7 @@ const DataDeletionPolicy = () => {
 
   // Render blocks with validation for text content
   const renderText = (text: string | undefined) => {
-    if (typeof text !== "string") return null;
+    if (!text) return null;
     return <span dangerouslySetInnerHTML={{ __html: text }} />;
   };
 
@@ -70,18 +78,18 @@ const DataDeletionPolicy = () => {
     <div className="min-h-screen flex bg-black text-white pt-4 pb-4">
       <div className="max-w-7xl mx-auto bg-neutral-900 mt-11 p-11 rounded-lg shadow-lg border border-gray-700">
         <div className="bg-custom-gradient shadow-lg shadow-white p-4 rounded-lg border border-gray-600">
-          {content.blocks.map((block: any, index: number) => {
+          {content.blocks.map((block, index) => {
             switch (block.type) {
               case "header":
                 return (
                   <h2 key={index} className="text-lg font-bold text-white mb-2">
-                    {block.data?.text}
+                    {block.data.text}
                   </h2>
                 );
               case "paragraph":
                 return (
                   <p key={index} className="text-gray-300 mb-2">
-                    {renderText(block.data?.text)}
+                    {renderText(block.data.text)}
                   </p>
                 );
               case "list":
@@ -90,7 +98,7 @@ const DataDeletionPolicy = () => {
                     key={index}
                     className="list-decimal pl-6 text-gray-300 mb-2"
                   >
-                    {block.data.items.map((item: string, i: number) => (
+                    {block.data.items.map((item, i) => (
                       <li key={i}>{item}</li>
                     ))}
                   </ol>
