@@ -1,9 +1,10 @@
 import { Dialog, DialogContent, DialogTrigger } from "./ui/dialog";
+import Image from "next/image";
 
 export default function Download() {
   return (
     <>
-      <section className=" w-full overflow-hidden flex justify-center flex-wrap bg-gradient-to-r from-orange-500 to-yellow-500 items-center h-auto calLastSection px-3 md:px-[72px] pb-10 md:pb-[72px] pt-10 md:pt-[155px] mq450:gap-5 mt-10 md:mt-[100px]">
+      <section className="w-full overflow-hidden flex justify-center flex-wrap bg-gradient-to-r from-orange-500 to-yellow-500 items-center h-auto calLastSection px-3 md:px-[72px] pb-10 md:pb-[72px] pt-10 md:pt-[155px] mq450:gap-5 mt-10 md:mt-[100px]">
         <div className="bg-[#171717] p-10 flex-col md:flex-row md:relative md:h-[600px] md:max-h-[600px] max-h-auto w-full flex justify-center items-center px-4 md:px-10 mq450:py-7 rounded-[32px]">
           <div
             className="flex-1 w-full flex flex-col justify-start items-start"
@@ -29,9 +30,11 @@ export default function Download() {
                   <button className="relative inline-flex h-auto overflow-hidden bg-gradient-to-r from-orange-600 to-yellow-500 border-2 border-white rounded-[8px]">
                     <span className="inline-flex h-[61px] w-full gap-1 md:gap-[14px] cursor-pointer items-center justify-center rounded-[8px]  py-2 md:py-[15px] px-3 md:px-[21px] text-sm font-medium text-white backdrop-blur-3xl">
                       <span>
-                        <img
+                        <Image
                           src="/apple.png"
                           alt="App Store"
+                          width={24}
+                          height={24}
                           className="w-6 h-6"
                         />
                       </span>
@@ -102,9 +105,11 @@ export default function Download() {
                   </button>
                 </DialogTrigger>
                 <DialogContent className="download-btn-modal-card w-[300px] md:w-full sm:max-w-[495px] flex flex-col justify-center items-center pb-8">
-                  <img
+                  <Image
                     src="/qrcode.png"
                     alt="Swasthi QR Code"
+                    width={200}
+                    height={200}
                     className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
                   />
                   <h4 className="w-[240px] md:w-[300px] text-[#E5E5E5] text-[24px] md:text-[33px] text-center leading-normal">
@@ -120,7 +125,13 @@ export default function Download() {
           </div>
 
           <div className="relative sm:-top-28 md:-top-28 lg:-top-28 top-2 animate-floating">
-            <img src="/Mockup Mobile.png" alt="none" className="sm:mt-10" />
+            <Image
+              src="/Mockup Mobile.png"
+              alt="Mobile Mockup"
+              width={400}
+              height={400}
+              className="sm:mt-10"
+            />
           </div>
         </div>
       </section>
