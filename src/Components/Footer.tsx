@@ -108,26 +108,28 @@ const Footer: React.FC = () => {
         <div className="w-1/2 md:w-1/4 lg:flex-1 px-4">
           <h4 className="font-semibold text-lg mb-4">Help & Support</h4>
           <ul className="space-y-4 text-sm text-justify">
-            {[{
-              label: "About us",
-              href: "/Aboutus",
-            },
-            {
-              label: "Terms & Conditions",
-              href: "/TermsAndConditions",
-            },
-            {
-              label: "Privacy Policy",
-              href: "/PrivacyPolicy",
-            },
-            {
-              label: "Data Deletion Policy",
-              href: "/DataDeletionPolicy",
-            },
-            {
-              label: "Return and Refund Policy",
-              href: "/ReturnAndRefund",
-            }].map((link, index) => (
+            {[
+              {
+                label: "About us",
+                href: "/Aboutus",
+              },
+              {
+                label: "Terms & Conditions",
+                href: "/TermsAndConditions",
+              },
+              {
+                label: "Privacy Policy",
+                href: "/PrivacyPolicy",
+              },
+              {
+                label: "Data Deletion Policy",
+                href: "/DataDeletionPolicy",
+              },
+              {
+                label: "Return and Refund Policy",
+                href: "/ReturnAndRefund",
+              },
+            ].map((link, index) => (
               <li key={index}>
                 <Link
                   href={link.href}
@@ -153,9 +155,11 @@ const Footer: React.FC = () => {
                 >
                   <span className="inline-flex h-[61px] w-full gap-1 md:gap-[14px] cursor-pointer items-center justify-center rounded-[8px] py-2 md:py-[15px] px-3 md:px-[21px] text-sm font-medium text-white backdrop-blur-3xl">
                     <span>
-                      <img
+                      <Image
                         src="/apple.png"
                         alt="App Store"
+                        width={24}
+                        height={24}
                         className="w-6 h-6"
                       />
                     </span>
@@ -229,10 +233,11 @@ const Footer: React.FC = () => {
                 </button>
               </DialogTrigger>
               <DialogContent className="download-btn-modal-card w-[300px] md:w-full sm:max-w-[495px] flex flex-col justify-center items-center pb-8">
-                <img
+                <Image
                   src="/qrcode.png"
                   alt="Swasthi QR Code"
-                  className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
+                  width={200}
+                  height={200}
                 />
                 <h4 className="w-[240px] md:w-[300px] text-[#E5E5E5] text-[24px] md:text-[33px] text-center leading-normal">
                   Scan & Download{" "}

@@ -135,11 +135,11 @@ const HealthJourney = () => {
           <div className="relative w-full max-w-lg">
             <div className="w-[100%] h-[100%]">
               <Image
-  src="/Ellipse.png"
-  alt="Background Ellipse"
-  width={500} // Replace with the appropriate width
-  height={500} // Replace with the appropriate height
-  className="z-0"
+                src="/Ellipse.png"
+                alt="Background Ellipse"
+                width={500} // Replace with the appropriate width
+                height={500} // Replace with the appropriate height
+                className="z-0"
               />
             </div>
             <div>

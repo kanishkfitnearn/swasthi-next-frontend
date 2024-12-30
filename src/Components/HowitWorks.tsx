@@ -1,10 +1,9 @@
 import { useState, forwardRef } from "react";
+import Image from "next/image"; // Import Image from Next.js
 
 const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
-  // State to manage video play
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
-  // Handle image click to play video
   const handleVideoClick = () => {
     setIsVideoPlaying(true);
   };
@@ -46,8 +45,8 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
                 Download App
               </p>
               <div className="flex justify-center md:justify-end gap-2">
-                <img src="/applestore.png" alt="Apple store" />
-                <img src="/googleplay.png" alt="Google play" />
+                <Image src="/applestore.png" alt="Apple store" width={50} height={50} />
+                <Image src="/googleplay.png" alt="Google Play store" width={50} height={50} />
               </div>
               <p className="font-roboto text-[12px] md:text-[14px] text-neutral-300">
                 Download Swasthi on your favourite device. Available on both iOS
@@ -55,7 +54,7 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
               </p>
             </div>
             <div className="w-full md:w-[300px]">
-              <img src="/Frame 2608479.png" alt="login" className="mx-auto" />
+              <Image src="/Frame 2608479.png" alt="Login" width={300} height={200} className="mx-auto" />
             </div>
             <div className="space-y-4">
               <p className="text-neutral-100 font-roboto text-[16px] md:text-[20px] font-bold">
@@ -75,25 +74,33 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
             className="m-0 h-full xl:block md:block hidden"
             data-aos="zoom-in"
           >
-            <img
+            <Image
               src="/Rectangle 7.png"
-              alt="rectangle"
-              className="ml-14 mt-0 absolute "
+              alt="Decorative rectangle"
+              width={1}
+              height={500}
+              className="ml-14 mt-0 absolute h-full"
             />
-            <img
+            <Image
               src="/Circle1.png"
-              alt="circle1"
-              className="h-[60px] w-[60px] rounded-full relative z-10 ml-7 mt-[60px]"
+              alt="Step 1 Circle"
+              width={60}
+              height={60}
+              className="rounded-full relative z-10 ml-7 mt-[60px]"
             />
-            <img
+            <Image
               src="/Circle2.png"
-              alt="circle2"
-              className="h-[60px] w-[60px] rounded-full relative z-10 my-[120px] ml-7"
+              alt="Step 2 Circle"
+              width={60}
+              height={60}
+              className="rounded-full relative z-10 my-[120px] ml-7"
             />
-            <img
+            <Image
               src="/Circle3.png"
-              alt="circle3"
-              className="h-[60px] w-[60px] rounded-full relative z-10 mb-[50px] ml-7"
+              alt="Step 3 Circle"
+              width={60}
+              height={60}
+              className="rounded-full relative z-10 mb-[50px] ml-7"
             />
           </div>
           <div
@@ -101,9 +108,11 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
             data-aos="slide-left"
           >
             <div className="w-full md:w-[300px]">
-              <img
+              <Image
                 src="/Frame 2608478.png"
-                alt="download_app"
+                alt="Download App Illustration"
+                width={300}
+                height={200}
                 className="mx-auto"
               />
             </div>
@@ -121,9 +130,11 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
               </p>
             </div>
             <div className="w-full md:w-[300px]">
-              <img
+              <Image
                 src="/Frame 2608479 (1).png"
-                alt="done"
+                alt="You’re Done Illustration"
+                width={300}
+                height={200}
                 className="mx-auto"
               />
             </div>
@@ -134,16 +145,16 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
         className="w-[80%] max-w-[720px] mx-auto "
         data-aos="zoom-out"
       >
-        {/* Clickable video image */}
         {!isVideoPlaying ? (
-          <img
+          <Image
             src="/Video.png"
-            alt="video_img"
+            alt="Video Placeholder"
+            width={720}
+            height={400}
             className="translate-y-[-60px] cursor-pointer w-full h-auto"
             onClick={handleVideoClick}
           />
         ) : (
-          // Display video in place of image when clicked
           <iframe
             width="100%"
             height="400"
