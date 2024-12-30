@@ -9,6 +9,16 @@ export const metadata: Metadata = {
   title: "Swasthi",
   description:
     "Track your health & achieve your wellness goals with Swasthi. Get personalized insights, daily motivation, & multilingual support. Download now!",
+  openGraph:{
+    images: [
+      {
+        url: "/Logo.png", // Replace with the path to your meta image
+        width: 1200, // Recommended size for Open Graph
+        height: 630,
+        alt: "Swasthi Meta Image",
+      },
+    ],
+  }
 };
 export default function DefaultLayout({
   children,
@@ -27,7 +37,7 @@ export default function DefaultLayout({
       <html lang="en">
         <head>
            {/* <title>Swasthi</title> */}
-        <link rel="icon" type="image/png" href="/Logo.png" sizes="16x16" /> 
+        {/* <link rel="icon" type="image/png" href="/Logo.png" sizes="16x16" />  */}
         </head>
         <body>{children}</body>
       </html>
