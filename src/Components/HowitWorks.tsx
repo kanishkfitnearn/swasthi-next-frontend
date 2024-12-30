@@ -64,7 +64,7 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
                 Enjoy the Experience
               </p>
               <p className="font-roboto text-[12px] md:text-[14px] text-neutral-300">
-                Explore the app's amazing features, track your progress, and
+                Explore the app&apos;s amazing features, track your progress, and
                 share Swasthi with friends and family to inspire their health
                 journey.
               </p>
@@ -168,5 +168,8 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
     </section>
   );
 });
+
+// Add displayName to the component
+HowItWorks.displayName = "HowItWorks";
 
 export default HowItWorks;

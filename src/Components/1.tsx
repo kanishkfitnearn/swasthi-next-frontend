@@ -114,10 +114,11 @@ const HealthJourney = () => {
                 </button>
               </DialogTrigger>
               <DialogContent className="download-btn-modal-card w-[300px] md:w-full sm:max-w-[495px] flex flex-col justify-center items-center pb-8">
-                <img
+                <Image
                   src="/qrcode.png"
                   alt="Swasthi QR Code"
-                  className="w-[200px] h-[200px] md:w-[300px] md:h-[300px]"
+                  width={200}
+                  height={200}
                 />
                 <h4 className="w-[240px] md:w-[300px] text-[#E5E5E5] text-[24px] md:text-[33px] text-center leading-normal">
                   Scan & Download{" "}
@@ -143,20 +144,27 @@ const HealthJourney = () => {
               />
             </div>
             <div>
-              <img
+              <Image
                 src="/Mockup Mobile.png"
                 alt="Mobile Mockup"
                 className="absolute w-[75%] z-[1] h-auto top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 sm:w-[75%] md:w-[75%] lg:w-[75%]"
+                width={400}
+                height={400}
+                priority
               />
-              <img
+              <Image
                 src="/Circle (1).png"
                 alt="Decorative Circle 1"
                 className="absolute w-16 sm:w-20 md:w-24 top-[50%] left-[5%] md:left-[5%] transform -translate-y-1/2 z-40"
+                width={100}
+                height={100}
               />
-              <img
+              <Image
                 src="/Circle (2).png"
                 alt="Decorative Circle 2"
                 className="absolute w-16 sm:w-20 md:w-24 top-[70%] left-[30%] md:left-[30%] transform -translate-y-1/2 z-40"
+                width={100}
+                height={100}
               />
             </div>
           </div>
