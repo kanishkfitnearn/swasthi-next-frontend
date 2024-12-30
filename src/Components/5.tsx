@@ -1,6 +1,5 @@
 import { Timeline } from "./ui/timeline";
 import { forwardRef } from "react";
-import Image from "next/image";
 
 interface ContentType {
   title: string;
