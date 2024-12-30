@@ -1,5 +1,5 @@
 import { Timeline } from "./ui/timeline";
-import { useState, forwardRef } from "react";
+import { forwardRef } from "react";
 import Image from "next/image";
 
 interface ContentType {
@@ -34,41 +34,20 @@ const Data: ContentType[] = [
 ];
 
 const HowitWorksMobile = forwardRef<HTMLElement>((_, ref) => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  // Handle image click to play video
-  const handleVideoClick = () => {
-    setIsVideoPlaying(true);
-  };
-
-
-  return ( 
+  return (
     <>
       <section ref={ref} className="block md:hidden w-full">
         <Timeline data={Data} />
-        <div className="w-[80%] max-w-[720px] mx-auto" data-aos="zoom-out">
-          {/* Clickable video image */}
-          {!isVideoPlaying ? (
-            <Image
-              unoptimized={true}
-              quality={100}
-              width={50}
-              height={50}
-              src="/Video.png"
-              alt="video_img"
-              className="translate-y-[-60px] cursor-pointer w-full h-auto"
-              onClick={handleVideoClick}
-            />
-          ) : (
-            // Display video in place of image when clicked
-            <iframe
-              width="100%"
-              height="400"
-              src="/-034a-434f-ab20-1f24ac408882.mp4"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          )}
+        {/* Video Section */}
+        <div className="w-[70%] mx-auto mt-10" data-aos="zoom-out">
+          <video
+            className="w-full h-auto rounded-lg"
+            src="/Untitled design (4).mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
         </div>
       </section>
     </>

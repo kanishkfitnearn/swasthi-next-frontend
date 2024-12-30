@@ -8,7 +8,7 @@ const PricingTitle = () =>  {
       className="w-full max-w-[823px] aos-init aos-animate h-auto mt-10 mx-auto space-y-4 px-4"
       data-aos="fade-up"
     >
-      <div className="w-full h-auto" data-aos="fade-up" data-aos-delay="300">
+      <div className="w-full h-auto" data-aos="fade-up" data-aos-delay="100">
         <p className="font-roboto text-[28px] sm:text-[36px] md:text-[40px] font-black leading-[1.25] text-center decoration-skip-ink-none text-neutral-200">
           Subscription: Best and Simple&nbsp;
           <span

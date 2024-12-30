@@ -1,13 +1,7 @@
-import { useState, forwardRef } from "react";
+import { forwardRef } from "react";
 import Image from "next/image"; // Import Image from Next.js
 
 const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  const handleVideoClick = () => {
-    setIsVideoPlaying(true);
-  };
-
   return (
     <section ref={ref} className="hidden md:block w-full overflow-hidden">
       <div
@@ -45,8 +39,18 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
                 Download App
               </p>
               <div className="flex justify-center md:justify-end gap-2">
-                <Image src="/applestore.png" alt="Apple store" width={50} height={50} />
-                <Image src="/googleplay.png" alt="Google Play store" width={50} height={50} />
+                <Image
+                  src="/applestore.png"
+                  alt="Apple store"
+                  width={50}
+                  height={50}
+                />
+                <Image
+                  src="/googleplay.png"
+                  alt="Google Play store"
+                  width={50}
+                  height={50}
+                />
               </div>
               <p className="font-roboto text-[12px] md:text-[14px] text-neutral-300">
                 Download Swasthi on your favourite device. Available on both iOS
@@ -54,7 +58,13 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
               </p>
             </div>
             <div className="w-full md:w-[300px]">
-              <Image src="/Frame 2608479.png" alt="Login" width={300} height={200} className="mx-auto" />
+              <Image
+                src="/Frame 2608479.png"
+                alt="Login"
+                width={300}
+                height={200}
+                className="mx-auto"
+              />
             </div>
             <div className="space-y-4">
               <p className="text-neutral-100 font-roboto text-[16px] md:text-[20px] font-bold">
@@ -141,29 +151,16 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
           </div>
         </div>
       </div>
-      <div
-        className="w-[80%] max-w-[720px] mx-auto "
-        data-aos="zoom-out"
-      >
-        {!isVideoPlaying ? (
-          <Image
-            src="/Video.png"
-            alt="Video Placeholder"
-            width={720}
-            height={400}
-            className="translate-y-[-60px] cursor-pointer w-full h-auto"
-            onClick={handleVideoClick}
-          />
-        ) : (
-          <iframe
-            width="100%"
-            height="400"
-            src="/-034a-434f-ab20-1f24ac408882.mp4"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-        )}
+      {/* Full-width video */}
+      <div className="w-[80%] mx-[120px] h-auto" data-aos="zoom-out">
+        <video
+          className="w-full h-auto"
+          src="/Untitled design (4).mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+        />
       </div>
     </section>
   );
