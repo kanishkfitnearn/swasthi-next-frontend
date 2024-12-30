@@ -58,7 +58,7 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
             </div>
             <div className="space-y-4">
               <p className="text-neutral-100 font-roboto text-[16px] md:text-[20px] font-bold">
-                You're Done
+                You&apos;re Done
               </p>
               <p className="text-neutral-100 font-roboto font-bold">
                 Enjoy the Experience
@@ -132,7 +132,7 @@ const HowItWorks = forwardRef<HTMLElement>((_, ref) => {
             <div className="w-full md:w-[300px]">
               <Image
                 src="/Frame 2608479 (1).png"
-                alt="You’re Done Illustration"
+                alt="You&apos;re Done Illustration"
                 width={300}
                 height={200}
                 className="mx-auto"
