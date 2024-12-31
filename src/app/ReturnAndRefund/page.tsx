@@ -18,35 +18,111 @@ const ReturnAndRefund = () => {
     time: new Date().getTime(),
     blocks: [
       {
-        type: "header",
-        data: { text: "Return and Refund Policy for Swasthi", level: 2 },
-      },
-      { type: "paragraph", data: { text: "Last Updated: 03-09-2024" } },
-      {
-        type: "paragraph",
-        data: {
-          text: "At Swasthi, we aim to ensure customer satisfaction with our return and refund policies...",
-        },
+        "type": "header",
+        "data": {
+          "text": "Return and Refund Policy for Swasthi",
+          "level": 1
+        }
       },
       {
-        type: "list",
-        data: {
-          style: "ordered",
-          items: [
-            "Eligibility for Returns.",
-            "Procedure for Returns.",
-            "Timeline for Refunds.",
-            "Non-Refundable Items.",
-            "Contact for Support.",
-          ],
-        },
+        "type": "paragraph",
+        "data": {
+          "text": "Effective Date: 09.11.2024"
+        }
       },
       {
-        type: "paragraph",
-        data: {
-          text: "For any questions, concerns, or requests, contact us at support@swasthi.com.",
-        },
+        "type": "paragraph",
+        "data": {
+          "text": "Thank you for choosing Swasthi. This policy outlines our terms regarding returns, refunds, and cancellations of subscriptions. By subscribing to Swasthi’s services, you agree to this policy in full."
+        }
       },
+      {
+        "type": "header",
+        "data": {
+          "text": "1. No Refunds, Cancellations, or Returns",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "All subscriptions to Swasthi’s services are final, and we do not offer refunds, cancellations, or returns for any subscriptions under any circumstances. This policy applies to all subscription types, including monthly, quarterly, and yearly plans."
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "2. Exception for Technical Activation Issues",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "In cases where a payment has been successfully processed, but the subscription is not activated due to a technical issue, we will work with you to resolve the problem. For such cases, please contact us via email at help.swasthi@gmail.com or info@swasthi.fit. Our team will investigate the issue, and if confirmed, we will either activate your subscription or offer a refund if activation cannot be completed."
+        }
+      },
+      {
+        "type": "header",
+        "data": {
+          "text": "3. Contact Information for Support",
+          "level": 2
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "If you experience technical issues related to your subscription activation, please reach out to our support team with the following details:"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Full Name"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Registered Email Address"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Transaction Reference Number"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Description of the issue"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "You can contact us via:"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Email: help.swasthi@gmail.com"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Email: info@swasthi.fit"
+        }
+      },
+      {
+        "type": "paragraph",
+        "data": {
+          "text": "Our support team will respond within 48 hours to assist with your request."
+        }
+      }
     ],
   });
 

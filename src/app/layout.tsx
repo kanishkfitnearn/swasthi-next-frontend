@@ -16,7 +16,6 @@ export default function DefaultLayout({
     <>
       <html lang="en">
         <head>
-          {/* Link the favicon */}
           <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         </head>
         <body>{children}</body>
