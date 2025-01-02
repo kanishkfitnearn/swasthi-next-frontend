@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Swasthi",
   description:
     "Track your health & achieve your wellness goals with Swasthi. Get personalized insights, daily motivation, & multilingual support. Download now!",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function DefaultLayout({
