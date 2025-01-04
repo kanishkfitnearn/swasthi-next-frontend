@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
             {[
               {
                 label: "About us",
-                href: "/AboutUs",
+                href: "/Aboutus",
               },
               {
                 label: "Terms & Conditions",
