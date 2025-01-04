@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                 height={16}
                 className="inline mr-2"
               />
-              help-support@fitnearn.com
+              help.swasthi@gmail.com
             </a>
           </p>
           <div className="flex mt-4 space-x-4">
