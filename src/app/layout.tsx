@@ -19,6 +19,7 @@ export default function DefaultLayout({
     <>
       <html lang="en">
         <head>
+        <meta name="google-site-verification" content="uReRaXlxpfWYmuQqRPGqzeKvMmVxK6M0h1LNuAIfaTE" />
           <link rel="icon" type="image/x-icon" href="/favicon.ico" />
         </head>
         <body>{children}</body>
